@@ -8,7 +8,7 @@
 
   <Identity
     Name="x86Emulator-2694-4359-a4ce-393506a67b53"
-    Publisher="CN=Bashar Astifan"
+    Publisher="CN=Admin"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="18487cdb-2694-4359-a4ce-393506a67b53" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
@@ -44,5 +44,6 @@
   <Capabilities>
     <Capability Name="internetClient" />
     <Capability Name="codeGeneration"/>
+    <uap:Capability Name="removableStorage"/>
   </Capabilities>
 </Package>

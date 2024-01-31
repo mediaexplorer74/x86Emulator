@@ -11,7 +11,7 @@
     <AssemblyName>x86Emulator</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.16299.0</TargetPlatformVersion>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.19041.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.14393.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -19,15 +19,16 @@
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
-    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <AppxBundle>Never</AppxBundle>
     <AppxBundlePlatforms>x64|arm</AppxBundlePlatforms>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
-    <PackageCertificateThumbprint>F82E841A54364310E4FFAC332C361E2AF62D3AB0</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>
+    </PackageCertificateThumbprint>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
-    <PackageCertificateKeyFile />
+    <PackageCertificateKeyFile>x86Emulator_TemporaryKey.pfx</PackageCertificateKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -167,6 +168,13 @@
     <Compile Include="Devices\PIC8259.cs" />
     <Compile Include="Devices\PIT8253.cs" />
     <Compile Include="Devices\VGA.cs" />
+    <Compile Include="Disasm\Attribute.cs" />
+    <Compile Include="Disasm\Delegates.cs" />
+    <Compile Include="Disasm\Disassembler.cs" />
+    <Compile Include="Disasm\Enums.cs" />
+    <Compile Include="Disasm\Helpers.cs" />
+    <Compile Include="Disasm\LookupTables.cs" />
+    <Compile Include="Disasm\Structs.cs" />
     <Compile Include="DynamicSettingsDialog.cs" />
     <Compile Include="GameGeometry.cs" />
     <Compile Include="GUI\WIN2D.cs" />
@@ -264,7 +272,7 @@
       <Version>6.2.14</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>13.0.2</Version>
+      <Version>13.0.3</Version>
     </PackageReference>
     <PackageReference Include="System.Memory">
       <Version>4.5.5</Version>
@@ -280,10 +288,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\x86DisasmUWP\x86DisasmUWP.csproj">
-      <Project>{b7274ece-28cc-4bfe-98a4-6c8e1d7d2721}</Project>
-      <Name>x86DisasmUWP</Name>
-    </ProjectReference>
     <ProjectReference Include="..\x86Native\x86Native.vcxproj">
       <Project>{0e82ee5a-b44a-4b8b-928a-a981c2cf8917}</Project>
       <Name>x86Native</Name>
@@ -301,9 +305,7 @@
     </None>
     <None Include="x86Emulator_TemporaryKey.pfx" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Helpers\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

@@ -85,7 +85,7 @@ namespace x86Emulator
         {
             GCHandle handle = GCHandle.Alloc(bytes, GCHandleType.Pinned);
 
-            T structure = (T)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(T));
+            T structure = Marshal.PtrToStructure<T>(handle.AddrOfPinnedObject());//(T)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(T));
             handle.Free();
 
             return structure;
@@ -95,7 +95,7 @@ namespace x86Emulator
         {
             GCHandle handle = GCHandle.Alloc(bytes, GCHandleType.Pinned);
 
-            T structure = (T)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(T));
+            T structure = Marshal.PtrToStructure<T>(handle.AddrOfPinnedObject());//(T)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(T));
             handle.Free();
             System.Type t = structure.GetType();
             FieldInfo[] fieldInfo = t.GetFields();

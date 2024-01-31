@@ -120,7 +120,8 @@
                                 <TextBlock FontWeight="Bold">)</TextBlock>
                             </StackPanel>
                             <!-- Memory Size -->
-                            <Slider x:Name="MemorySizeValue"  Value="{x:Bind MachineMemorySize, Mode=OneWay}" Maximum="512" Minimum="8" StepFrequency="8" ValueChanged="MemorySizeValue_ValueChanged"/>
+                            <Slider x:Name="MemorySizeValue"  Value="{x:Bind MachineMemorySize, Mode=OneWay}" 
+                                    Maximum="512" Minimum="8" StepFrequency="8" ValueChanged="MemorySizeValue_ValueChanged"/>
 
                             <Border BorderBrush="Gray" BorderThickness="1" Margin="0,5,0,0" HorizontalAlignment="Stretch"></Border>
 
