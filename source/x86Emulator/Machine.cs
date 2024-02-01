@@ -150,6 +150,9 @@ namespace x86Emulator
 
         }
         public bool systemIsLoading = false;
+
+
+        // CompleteLoading
         private async void CompleteLoading(CanvasAnimatedControl uiForm)
         {
             gui = new WIN2D(uiForm, vgaDevice);
@@ -162,7 +165,8 @@ namespace x86Emulator
 
             devices = new IDevice[]
             {
-                FloppyDrives, new CMOS(ataDevice), new Misc(), new PIT8253(), picDevice, keyboard, mouse, dmaController, vgaDevice, ataDevice
+                FloppyDrives, new CMOS(ataDevice), new Misc(), new PIT8253(), 
+                picDevice, keyboard, mouse, dmaController, vgaDevice, ataDevice
             };
 
             CPU = new CPU.CPU();
@@ -174,7 +178,7 @@ namespace x86Emulator
             CPU.IORead += CPUIORead;
             CPU.IOWrite += CPUIOWrite;
             systemIsLoading = false;
-        }
+        }//CompleteLoading
 
         public void ResetScreen()
         {

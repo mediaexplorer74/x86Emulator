@@ -21,8 +21,8 @@
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
-    <AppxBundle>Never</AppxBundle>
-    <AppxBundlePlatforms>x64|arm</AppxBundlePlatforms>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|arm</AppxBundlePlatforms>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
     <PackageCertificateThumbprint>
@@ -160,6 +160,7 @@
     <Compile Include="Devices\ATA.cs" />
     <Compile Include="Devices\CMOS.cs" />
     <Compile Include="Devices\DMA.cs" />
+    <Compile Include="Devices\HDD.cs" />
     <Compile Include="Devices\Floppy.cs" />
     <Compile Include="Devices\IDevice.cs" />
     <Compile Include="Devices\Mouse.cs" />

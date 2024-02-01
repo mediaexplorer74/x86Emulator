@@ -20,8 +20,13 @@ namespace x86Emulator.ATADevice
             identifyBuffer = new ushort[256];
 
             identifyBuffer[0] = 0x85c0;
-            Util.ByteArrayToUShort(Encoding.ASCII.GetBytes("12345678901234567890"), identifyBuffer, 10, true);
-            Util.ByteArrayToUShort(Encoding.ASCII.GetBytes("x86 CS CDROM                            "), identifyBuffer, 27, true);
+            
+            Util.ByteArrayToUShort(Encoding.ASCII.GetBytes("12345678901234567890"), 
+                identifyBuffer, 10, true);
+
+            Util.ByteArrayToUShort(Encoding.ASCII.GetBytes("x86 CS CDROM                            "), 
+                identifyBuffer, 27, true);
+
             identifyBuffer[49] = 0x0300;
             identifyBuffer[50] = 0x4000;
             identifyBuffer[53] = 0x0003;

@@ -198,8 +198,13 @@
             </StackPanel>
         </StackPanel>
         <CommandBar x:Name="ActionsBar" Grid.Row="2" AllowFocusOnInteraction="False">
+            
             <AppBarButton Icon="Play" x:Name="StartMachine" Click="StartMachine_Click" Label="Start"></AppBarButton>
-            <AppBarButton x:Name="Restart" Label="Restart" Visibility="Collapsed" Click="Restart_Click" Icon="Refresh"></AppBarButton>
+
+            <!-- Visibility="Collapsed" -->
+                <AppBarButton x:Name="Restart" Label="Restart" Visibility="Visible" Click="Restart_Click" 
+                          Icon="Refresh"></AppBarButton>
+            
             <AppBarButton x:Name="Keyboard" Label="Keyboard" Click="Keyboard_Click" Icon="Keyboard"></AppBarButton>
             <AppBarButton x:Name="Floppy" Label="Floppy" Icon="Save">
                 <AppBarButton.Flyout>

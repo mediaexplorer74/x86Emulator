@@ -416,8 +416,10 @@ namespace x86Emulator
         }
         #endregion
 
+
         //Resources Management
         #region Resources
+        
         int MachineMemorySize
         {
             get
@@ -425,6 +427,8 @@ namespace x86Emulator
                 return SystemConfig.MemorySize;
             }
         }
+
+        // BuildResources
         private void BuildResources()
         {
             EventHandler floppyCallback = async (sender, args) =>
@@ -433,26 +437,38 @@ namespace x86Emulator
                 BuildFloppyOptions();
                 await machine.SyncFloppies();
             };
+
             EventHandler hddCallback = async (sender, args) =>
             {
                 Helpers.Logger((string)sender);
                 await machine.SyncHDDs();
             };
+
             EventHandler cdCallback = async (sender, args) =>
             {
                 Helpers.Logger((string)sender);
                 await machine.SyncCDROMs();
             };
+
             SystemConfig.MachineResources = new Resources(floppyCallback, hddCallback, cdCallback);
             resourcesContainerBlock.Children.Add(SystemConfig.MachineResources.resourcesContainer);
+            
+            // ?
             BuildFloppyOptions();
-        }
+
+        }//BuildResources
+
+
+        // GetMemorySize
         private void GetMemorySize()
         {
             var storedMemory = Plugin.Settings.CrossSettings.Current.GetValueOrDefault("MachineMemorySize", 32);
             SystemConfig.MemorySize = storedMemory;
             UpdateBindings();
-        }
+        }//GetMemorySize
+
+
+        // SetMemorySize
         private void SetMemorySize(int memorySize)
         {
             if (AppStarted)
@@ -816,7 +832,9 @@ namespace x86Emulator
             }
 
             machine.Stop();
+
             machine.ResetScreen();
+            
             await Task.Delay(2000);
             machine = null;
             await InitialMachine();
