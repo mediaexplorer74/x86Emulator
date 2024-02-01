@@ -825,6 +825,8 @@ namespace x86Emulator
             EnableButtons(true);
             SystemIsLoading(false);
         }
+
+        // MemorySizeValue_ValueChanged
         private void MemorySizeValue_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
             try
@@ -834,9 +836,12 @@ namespace x86Emulator
             }
             catch (Exception ex)
             {
-
+                Debug.WriteLine("[ex] MemorySizeValue_ValueChanged ex.: " + ex.Message);
             }
-        }
+        }//MemorySizeValue_ValueChanged
+
+
+        // Keyboard_Key_Click
         private void Keyboard_Key_Click(object sender, RoutedEventArgs e)
         {
             var target = (AppBarButton)sender;
@@ -850,7 +855,10 @@ namespace x86Emulator
                     break;
                 }
             }
-        }
+        }//Keyboard_Key_Click
+
+
+        // Viewbox_Tapped
         private void Viewbox_Tapped(object sender, TappedRoutedEventArgs e)
         {
             StartMachine_Click(null, null);

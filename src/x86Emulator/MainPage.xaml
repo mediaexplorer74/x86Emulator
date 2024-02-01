@@ -212,9 +212,20 @@
                 <AppBarButton x:Name="Keyboard_F1" Tag="F1" Icon="Keyboard" Label="F1" Click="Keyboard_Key_Click"></AppBarButton>
                 <AppBarButton x:Name="Keyboard_F2" Tag="F2" Icon="Keyboard" Label="F2" Click="Keyboard_Key_Click"></AppBarButton>
                 <AppBarButton x:Name="Keyboard_F3" Tag="F3" Icon="Keyboard" Label="F3" Click="Keyboard_Key_Click"></AppBarButton>
-                <AppBarButton x:Name="Keyboard_F11" Tag="F11" Icon="Keyboard" Label="11" Click="Keyboard_Key_Click"></AppBarButton>
+              
+                <AppBarButton x:Name="Keyboard_F4" Tag="F4" Icon="Keyboard" Label="F4" Click="Keyboard_Key_Click"></AppBarButton>
+                <AppBarButton x:Name="Keyboard_F5" Tag="F5" Icon="Keyboard" Label="F5" Click="Keyboard_Key_Click"></AppBarButton>
+                <AppBarButton x:Name="Keyboard_F6" Tag="F6" Icon="Keyboard" Label="F6" Click="Keyboard_Key_Click"></AppBarButton>
+
+                <AppBarButton x:Name="Keyboard_F7" Tag="F7" Icon="Keyboard" Label="F7" Click="Keyboard_Key_Click"></AppBarButton>
+                <AppBarButton x:Name="Keyboard_F8" Tag="F8" Icon="Keyboard" Label="F8" Click="Keyboard_Key_Click"></AppBarButton>
+                <AppBarButton x:Name="Keyboard_F9" Tag="F9" Icon="Keyboard" Label="F9" Click="Keyboard_Key_Click"></AppBarButton>
+
+                <AppBarButton x:Name="Keyboard_F10" Tag="F10" Icon="Keyboard" Label="F10" Click="Keyboard_Key_Click"></AppBarButton>
+                <AppBarButton x:Name="Keyboard_F11" Tag="F11" Icon="Keyboard" Label="F11" Click="Keyboard_Key_Click"></AppBarButton>
                 <AppBarButton x:Name="Keyboard_F12" Tag="F12" Icon="Keyboard" Label="F12" Click="Keyboard_Key_Click"></AppBarButton>
                 <AppBarSeparator></AppBarSeparator>
+                
                 <AppBarButton x:Name="Keyboard_Esc" Tag="Escape" Icon="Keyboard" Label="Esc" Click="Keyboard_Key_Click"></AppBarButton>
             </CommandBar.SecondaryCommands>
         </CommandBar>
